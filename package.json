@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "url": "git+https://github.com/NatSsy/ElClubDeLaMilanesa-BACKEND.git"
   },
   "author": "",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/NatSsy/ElClubDeLaMilanesa-BACKEND/issues"
   },
-  "homepage": "https://github.com/NatSsy/ElClubDeLaMilanesa-BACKEND#readme"
+  "homepage": "https://github.com/NatSsy/ElClubDeLaMilanesa-BACKEND#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node": "^19.8.1",
+    "nodemon": "^2.0.21"
+  }
 }
