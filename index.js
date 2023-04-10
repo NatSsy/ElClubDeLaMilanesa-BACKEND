@@ -1,9 +1,13 @@
 const express = require('express')
+const { ConexionDB } = require('./database/config')
+
 require('dotenv').config()
 const app = express()
 
 //lectura y parseo del body
 app.use(express.json())
+
+ConexionDB()
 
 //directorio publico
 app.use(express.static("public"))
