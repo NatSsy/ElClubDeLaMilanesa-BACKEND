@@ -1,8 +1,22 @@
 const crearUsuario = (req, res) => {
-    res.status(200).json({
+
+const {name, email, password} = req.body;
+
+
+    res.status(201).json({
         ok:true,
         msg: "usuario creado"
     })
 }
 
-module.exports = crearUsuario
+const loginUsuario = (req, res) =>{
+    res.status(200).json({
+        ok: true,
+        msg: "usuario logeado"
+    })
+}
+
+module.exports = {
+    crearUsuario, 
+    loginUsuario,
+};
