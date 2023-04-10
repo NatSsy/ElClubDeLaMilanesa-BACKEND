@@ -50,14 +50,29 @@ const loginUsuario = async (req, res) => {
                 msg:"El email o contraseña es invalido"
             })
         }
-        const validar constraseña =b
-    } catch (error) {
 
+        const validarContraseña = bcrypt.compareSync(password, usuario.password)
+
+        if(!validarContraseña){
+            return res.status(400).json({
+                ok:false,
+                msg:"El email o contraseña es invalido"
+            })
+        }
+        res.status(200).json({
+            ok:true,
+            uid: usuario.id,
+            name: usuario.name,
+            rol: usuario.rol,
+        });
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            ok: false,
+            msg: "Contactarse con el administrador"
+        })
     }
-    res.status(200).json({
-        ok: true,
-        msg: "usuario logeado"
-    })
 }
 
 module.exports = {
