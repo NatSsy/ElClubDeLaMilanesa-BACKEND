@@ -1,13 +1,15 @@
 const express = require('express')
 const { ConexionDB } = require('./database/config')
-
 require('dotenv').config()
 const app = express()
+const cors = require("cors")
 
 //lectura y parseo del body
 app.use(express.json())
 
 ConexionDB()
+
+app.use(cors())
 
 //directorio publico
 app.use(express.static("public"))
